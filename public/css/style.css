@@ -93,14 +93,101 @@ margin-top: 2rem;
   }
   
   body {
-  min-height: 100vh;     /* poori screen ki height */
+  min-height: 100vh;   
+  
   display: flex;
   flex-direction: column;
 }
 
 footer {
-  margin-top: auto;      /* ye footer ko neeche dhakel dega */
+  margin-top: auto;      
+  
   background: #f1f1f1;
   padding: 10px;
   text-align: center;
+}
+.listing-card {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.listing-card:hover {
+  transform: scale(1.02);
+}
+
+.listing-card img {
+  width: 100%;
+  height: 200px; 
+  
+  object-fit: cover;
+  
+}
+
+@media (max-width: 768px) {
+  .listing-card img {
+    height: 180px; 
+  }
+  .card-body {
+    padding: 10px;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+  .card-text {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  [class*="offset-"] {
+    margin-left: 0 !important;
+  }
+  .col-6, .col-8 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* --- Card styling --- */
+.listing-card, .show-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.listing-card:hover, .show-card:hover {
+  transform: scale(1.01);
+}
+
+.listing-card img, .show-card img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  object-fit: cover;
+}
+
+/* --- Responsive text --- */
+@media (max-width: 576px) {
+  .card-body {
+    padding: 12px;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+  .card-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* --- Reviews card --- */
+.review-card {
+  border-radius: 10px;
+}
+
+.review-card .card-body {
+  padding: 15px;
 }
